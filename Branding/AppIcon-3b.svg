@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="bg" cx="0.42" cy="0.28" r="0.78">
+      <stop offset="0" stop-color="#1A1A20"></stop>
+      <stop offset="0.62" stop-color="#0B0B0D"></stop>
+      <stop offset="1" stop-color="#06060A"></stop>
+    </radialGradient>
+    <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="-20" dy="0" stdDeviation="26" flood-color="#000" flood-opacity="0.6"></feDropShadow>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bg)"></rect>
+
+  
+  <g transform="translate(512 512) rotate(-16) translate(-107.5 28.7)">
+    <rect x="-204.8" y="-204.8" width="409.6" height="409.6" rx="76.8" fill="#141418" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="10.2"></rect>
+  </g>
+
+  
+  <g transform="translate(512 512) rotate(-7) translate(-46.1 8.2)">
+    <rect x="-204.8" y="-204.8" width="409.6" height="409.6" rx="76.8" fill="#1D1D22" stroke="#FFFFFF" stroke-opacity="0.13" stroke-width="10.2"></rect>
+  </g>
+
+  
+  <g transform="translate(512 512) rotate(9) translate(76.8 -22.5)" filter="url(#cardShadow)">
+    <rect x="-204.8" y="-204.8" width="409.6" height="409.6" rx="76.8" fill="#D4FF3F"></rect>
+    <rect x="-121.9" y="-66.6" width="41" height="133.1" rx="20.5" fill="#0B0B0D"></rect>
+    <rect x="-54.3" y="-117.8" width="41" height="235.5" rx="20.5" fill="#0B0B0D"></rect>
+    <rect x="13.3" y="-87.0" width="41" height="174.1" rx="20.5" fill="#0B0B0D"></rect>
+    <rect x="80.9" y="-138.2" width="41" height="276.5" rx="20.5" fill="#0B0B0D"></rect>
+  </g>
+</svg>

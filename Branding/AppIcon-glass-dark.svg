@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="bg" cx="0.40" cy="0.24" r="0.82"><stop offset="0" stop-color="#24242E"></stop><stop offset="0.46" stop-color="#14141A"></stop><stop offset="0.78" stop-color="#0B0B0D"></stop><stop offset="1" stop-color="#06060A"></stop></radialGradient>
+    <linearGradient id="glassA" x1="0" y1="0" x2="0.72" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.1"></stop><stop offset="0.6" stop-color="#FFFFFF" stop-opacity="0.03"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.055"></stop></linearGradient>
+    <linearGradient id="glassB" x1="0" y1="0" x2="0.72" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.16"></stop><stop offset="0.58" stop-color="#FFFFFF" stop-opacity="0.05"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.09"></stop></linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0.74" y2="1"><stop offset="0" stop-color="#EAFF95" stop-opacity="1"></stop><stop offset="0.34" stop-color="#D9FF52" stop-opacity="1"></stop><stop offset="0.68" stop-color="#C4F02E" stop-opacity="1"></stop><stop offset="1" stop-color="#A6D024" stop-opacity="1"></stop></linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0.78" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.62"></stop>
+      <stop offset="0.32" stop-color="#fff" stop-opacity="0.12"></stop>
+      <stop offset="0.48" stop-color="#fff" stop-opacity="0"></stop>
+    </linearGradient>
+    <clipPath id="frontClip"><rect x="-240.6" y="-240.6" width="481.3" height="481.3" rx="90.1"></rect></clipPath>
+    <filter id="drop" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="-29" dy="14" stdDeviation="33" flood-color="#000" flood-opacity="0.5"></feDropShadow>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"></rect>
+  <g transform="translate(512 512) rotate(-16) translate(-126.0 33.8)">
+    <rect x="-240.6" y="-240.6" width="481.3" height="481.3" rx="90.1" fill="url(#glassA)" stroke="rgba(255,255,255,0.07)" stroke-width="9.2"></rect>
+  </g>
+  <g transform="translate(512 512) rotate(-7) translate(-54.3 9.2)">
+    <rect x="-240.6" y="-240.6" width="481.3" height="481.3" rx="90.1" fill="url(#glassB)" stroke="rgba(255,255,255,0.10)" stroke-width="9.2"></rect>
+  </g>
+  <g transform="translate(512 512) rotate(9) translate(90.1 -26.6)" filter="url(#drop)">
+    <rect x="-240.6" y="-240.6" width="481.3" height="481.3" rx="90.1" fill="url(#front)"></rect>
+    <g clip-path="url(#frontClip)">
+      <rect x="-143.9" y="-78.3" width="48.1" height="156.7" rx="24.6" fill="#090E02" fill-opacity="0.82"></rect>
+      <rect x="-64.0" y="-138.2" width="48.1" height="276.5" rx="24.6" fill="#090E02" fill-opacity="0.82"></rect>
+      <rect x="15.9" y="-102.4" width="48.1" height="204.8" rx="24.6" fill="#090E02" fill-opacity="0.82"></rect>
+      <rect x="95.7" y="-162.3" width="48.1" height="324.6" rx="24.6" fill="#090E02" fill-opacity="0.82"></rect>
+      <rect x="-240.6" y="-240.6" width="481.3" height="481.3" rx="90.1" fill="url(#sheen)"></rect>
+    </g>
+  </g>
+</svg>

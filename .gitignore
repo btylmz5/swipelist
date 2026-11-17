@@ -1,0 +1,16 @@
+# Secrets — copy Config.example.swift to Swipelist/Config.swift and fill it in.
+Swipelist/Config.swift
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+
+# Supabase personal access token — grants full account access. Never commit.
+.supabase-token
+build-device/
+
+# Local tool settings
+.claude/settings.local.json

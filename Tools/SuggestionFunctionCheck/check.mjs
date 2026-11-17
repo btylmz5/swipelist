@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import {handler, parseBrief, decodeSongs, MODEL} from '../../supabase/functions/swipelist2-suggest-songs/index.ts';
+assert.equal(parseBrief({text:' test ',count:52}).count,52);
+for(const body of [{text:''},{text:'x',count:61},{text:'x',count:1.5},{text:'x',liked:[{artist:'x',track:'y',listen_seconds:31}]}]) assert.throws(()=>parseBrief(body));
+assert.equal(decodeSongs('[{"artist":"Şanışer","track":"Test"},{"artist":"Saniser","track":"Test"}]').length,1);
+globalThis.Deno={env:{get:()=> 'test-value'}};
+let calls=[];
+globalThis.fetch=async(url,options)=>{ calls.push({url,options}); return Response.json({id:'user',is_anonymous:false}); };
+const req=(body,token='Bearer test')=>new Request('https://local/',{method:'POST',headers:token?{Authorization:token}:{},body:JSON.stringify(body)});
+assert.equal((await handler(req({text:'test'},null))).status,401); assert.equal(calls.length,0);
+assert.equal((await handler(req({text:'test',count:61}))).status,400); assert.equal(calls.length,1);
+globalThis.fetch=async()=>Response.json({is_anonymous:true,id:'user'});
+assert.equal((await handler(req({text:'test'}))).status,401);
+globalThis.fetch=async(url,options)=>{
+ if(url.includes('/auth/'))return Response.json({id:'user'});
+ const body=JSON.parse(options.body); assert.equal(body.model,MODEL); assert.equal(body.thinking.type,'between_tools'); assert.equal(body.output_config.effort,'low');
+ return Response.json({stop_reason:'end_turn',content:[{type:'text',text:'[{"artist":"Artist","track":"Song"}]'}]});
+};
+const success=await handler(req({text:'test',count:52})); assert.equal(success.status,200); assert.equal((await success.json()).songs.length,1);
+globalThis.fetch=async(url)=>url.includes('/auth/')?Response.json({id:'user'}):Response.json({stop_reason:'max_tokens',content:[]});
+assert.equal((await handler(req({text:'test'}))).status,502);
+console.log('Suggestion function checks passed: validation, deduplication, authentication, model settings, truncation.');
